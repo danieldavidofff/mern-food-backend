@@ -8,5 +8,6 @@ const router = express.Router();
 router.get("/search/:city", param("city").isString().trim().notEmpty().withMessage("City parameter must be a string"),
   RestaurantController.searchRestaurant
 );
+router.get("/:restaurantId",param("restaurantId").isString().trim().notEmpty().withMessage("RestaurantId parameter must be a string"), RestaurantController.getRestaurant)
 
 export default router;
